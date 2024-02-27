@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 var builder = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables()
     .AddUserSecrets<Program>(optional: true);
 
 var configuration = builder.Build();
